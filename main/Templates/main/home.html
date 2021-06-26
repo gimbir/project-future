@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %} {% block content %}
+<div class="my-auto">
+    <div class="row my-auto" style="min-height: 640px;width:100%; margin: 0 !important">
+        <div class="col-md-3 text-white" style='display: table; background-color: rgba(200,200,200,0.1)'>
+            <div style='display: table-cell; vertical-align: middle '>
+                <div class="m-3">
+                <ul class='warning' style='list-style:disc'>
+                    <li>We recommend you to use desktop browser for the best experience.</li>
+                    <li>The photos you upload to the site are stored in the database and displayed publicly on the gallery page.  </li>
+                    <li>Please do NOT upload NSFW images.</li>
+
+                <ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 ">
+            <table align=center border="0" height=100%>
+                <tr valign='middle'>
+                    <td align=center>
+                        <form method="POST" enctype="multipart/form-data" action="{% url 'translate' %}">
+                        {% csrf_token %}
+                            <div class="container img">
+                                <img id="output" src="https://placeimg.com/600/400/any" />
+
+                            </div> <br><br>
+                            <label for="img" style="color: white;">Select image:</label> <br>
+                            <input type="file" id="img" name="img" accept="image/*" required onchange="loadFile(event)" style="color: white; ">
+                    </td>
+                </tr>
+                <tr valign='top'>
+                    <td align=center>
+                        <button type="submit" class="btn btn-primary" id="btn-translate" name="submit" value="translate">Translate</button>
+                    </td>
+                </tr>
+                </form>
+
+            </table>
+        </div>
+        <div class="col-md-3 text-white" style='display: table; background-color: rgba(200,200,200,0.1)'>
+            <div style='display: table-cell; vertical-align: middle; '>
+                <div class="m-3">
+                    Step 1: Choose image from your computer. (Max size 2.5 MB)<br>
+                    <img src='../../static/img/tutorial.png' style="width:100%;"><br><br>
+                    Step 2: Press 'Translate' button. <br>
+                    <img src='../../static/img/tutorial2.png' width='250px'><br><br>
+                    Step 3: You can choose a detected object or label and translate it to a selected language.
+                    <img src='../../static/img/tutorial3.png' style="width:100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../static/js/image.js">
+</script>
+    
+
+
+{% endblock content %}

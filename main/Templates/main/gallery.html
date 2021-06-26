@@ -1,0 +1,330 @@
+{% extends 'main/base.html' %} {% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="active">
+        <div class="sidebar-header">
+            <h3 >Gallery Filter</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <form method="GET" action=''>
+        {% if request.user.is_authenticated %}
+            <li class="active">
+                <div class="custom-control custom-checkbox mx-5">
+                    <input type="checkbox" {% if request.GET.myImages %}checked='true'{% endif %} class="custom-control-input" id="Check1" name="myImages">
+                    <label class="custom-control-label" for="Check1">My images</label>
+                    
+                </div>
+            </li>
+        {% endif %}
+            <li>
+                <section class="my-4 mx-3">
+                    <h6 class="font-weight-bold my-3" style="text-align: center;">Objects</h6>
+                    <ul>
+                        <li>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="search-span"><i class="fas fa-search"></i></span>
+                                </div>
+                                <input type="text" id="search-obj" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="list scroll" id="pageSubmenu">
+                        {% for obj in obj_filter %}
+                        <li>
+                            <div>
+                                <input type='radio' {% if request.GET.object == obj.obj_name %} checked='true' {% endif %} name='object' value="{{ obj.obj_name }}" id="{{ obj.obj_name }}" style='color: #fff !important;'>
+                                <label for="{{ obj.obj_name }}" class='obj-label'> {{ obj.obj_name }} </label>
+                            </div>
+                        </li>
+                        {% endfor %}
+                        
+                    </ul>
+                </section>
+            </li>
+
+            <li>
+                <!-- Section: Score -->
+                <section class="my-4 mx-3">
+                    <h6 class="font-weight-bold my-3" style="text-align: center;">Score: <label id="slider_label" for="slider">{% if request.GET.slider %} {{ request.GET.slider }} {% else %} 0 {% endif %}</label></h6>
+
+                    <div class="slidecontainer">
+                        <input id="slider" name="slider" type="range" {% if request.GET.slider %} value={{ request.GET.slider }} {% else %} value=0 {% endif %} min="0" max="100">
+                        
+                    </div>
+
+                </section>
+            </li>
+            <li>
+                <!-- Section: Average -->
+                <section class="my-4 mx-3">
+
+                    <h6 class="font-weight-bold my-3" style="text-align: center;">Avg. Rating</h6>
+                    <div style="text-align: left;">
+                        <input {% if request.GET.filter_rate == '5' %} checked='true' {% endif %} type="radio" value="5" name="filter_rate" id="rate_5" class="rate_radio">
+                        <label class='rate_label stars' style="text-decoration: none;" for="rate_5">
+                            <ul style="margin-bottom:0">
+                                <li >
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <p style="display: unset;" class="small text-uppercase card-link-secondary px-2"> 5 Stars
+                                    </p>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+
+                    <div style="text-align: left;">
+                        <input {% if request.GET.filter_rate == '4' %} checked='true' {% endif %} type="radio" value="4" name="filter_rate" id="rate_4" class="rate_radio">
+                        <label class='rate_label stars' style="text-decoration: none;" for="rate_4">
+                            <ul style="margin-bottom:0">
+                                <li >
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <p style="display: unset;" class="small text-uppercase card-link-secondary px-2"> 4+ Stars
+                                    </p>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+                    <div style="text-align: left;">
+                        <input {% if request.GET.filter_rate == '3' %} checked='true' {% endif %} type="radio" value="3" name="filter_rate" id="rate_3" class="rate_radio">
+                        <label class='rate_label stars' style="text-decoration: none;" for="rate_3">
+                            <ul>
+                                <li >
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <p style="display: unset;" class="small text-uppercase card-link-secondary px-2">3+ Stars
+                                    </p>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+                    <div style="text-align: left;">
+                        <input {% if request.GET.filter_rate == '2' %} checked='true' {% endif %} type="radio" value="2" name="filter_rate" id="rate_2" class="rate_radio">
+                        <label class='rate_label stars' style="text-decoration: none;" for="rate_2">
+                            <ul>
+                                <li >
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <p style="display: unset;" class="small text-uppercase card-link-secondary px-2">2+ Stars
+                                    </p>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+
+                    <div style="text-align: left;" >
+                        <input {% if request.GET.filter_rate == '1' %} checked='true' {% endif %} type="radio" value="1" name="filter_rate" id="rate_1" class="rate_radio">
+                        <label class='rate_label stars' style="text-decoration: none;" for="rate_1" >
+                            <ul>
+                                <li >
+                                    <i class="fas fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <i class="far fa-star fa-sm"></i>
+                                    <p style="display: unset;" class="small text-uppercase card-link-secondary px-2">1+ Star
+                                    </p>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+
+
+                </section>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <input type='submit' class='apply' value="Apply">
+            </li>
+            <br>
+            <li>
+                <button class='btn btn-primary clear-all' style='width:100%; text-decoration: none;'>
+                    <a href='/gallery'>Clear All Filters</a>
+                </button>
+            </li>
+            </form>
+
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" style="width: 100%;">
+
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span>Filter</span>
+                </button>
+
+                <h2 class="big-heading" style="color: white; padding-right: 80px">User Gallery</h2>
+                <div>
+                    <ul class="nav navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="row">
+        {% if page_obj%}
+            {% for image in page_obj %}
+            <div class="column">
+                <div class="table1">
+                    <h2 class="heading">
+                        {{image.image_title}}
+                    </h2>
+                    <div class="block">
+                        <img id="output" class="gallery-img" src="../../../media/image/{{image.img}}" />
+                    </div>
+
+                    <div class="block">
+                        <p>User: <b>{{image.user}}</b>
+
+                            <ul class="options">
+                                <li>Objects: <b>{{image.objects}}</b></li>
+                                <li>Date: <b>{{image.date}}</b></li>
+                                <li>Avarage Rate: <b>{{image.rate}}</b></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <button class="btn">
+                        <a href="/translate/?image={{image.img}}" style="text-decoration: none;">
+                            <p>Translate</p>
+                            <span class="fas fa-language" aria-hidden="true"></span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div style='text-align: center; width: 100%; margin-bottom: 2rem'>
+            <img src='../../static/img/noresults2.gif' width='550px' height='550px' style='border-radius: 50%' alt="Sorry. No Results.">
+        </div>
+        {% endif %}
+        </div>
+
+        <!--Pagination-->
+
+        <nav class="d-flex justify-content-center wow fadeIn">
+            <ul class="pagination pg-blue">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                {% endif %}
+                <li class="page-item active">
+                    <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+</div>
+
+<script>
+//Sidebar toggle
+    $(document).ready(function() {
+        $('#sidebarCollapse').on('click', function() {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+<script>
+// Search bar
+    $(document).ready(function(){
+        $("#search-obj").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#pageSubmenu li").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                $(".object-list-item:hidden").slice().slideDown();
+                    if ($(".object-list-item:hidden").length == 0) {
+                        $("#loadMore").css("visibility", "hidden");
+                    }
+            });
+            if (value.length == 0){
+                $(".object-list-item").slice().css({'visibility': "visible", 'display': 'none'});
+                $("#loadMore").css("visibility", "visible");
+            }
+        });
+    });
+</script>
+
+<script>
+// Score Slider
+    var input = document.getElementById("#slider");
+    var label = document.getElementById("#slider_label");
+
+
+    $(document).ready(function() {
+        $("#slider").mousemove(function() {
+            var newval = $(this).val();
+            var value = Number(newval) / 100;
+            $(this).css("--thumb-rotate", `${value * 720}deg`);
+            $('#slider_label').text(Math.round(value * 100));
+        });
+    });
+</script>
+
+<script>
+// Image resize when sidebar is active
+    $(document).ready(function() {
+        var screenw = document.documentElement.clientWidth;
+        var width = screenw / 5.2;
+        var height = width * 1.2;
+        $(".gallery-img").css({
+            "width": width + "px",
+            "height": height + "px",
+        });
+        $("#sidebarCollapse").on('click', function() {
+            if (!$("#sidebar").hasClass('active')) {
+                screenw = screenw - 250;
+            } else {
+                screenw = screenw + 250;
+            }
+            width = screenw / 5.2;
+            height = width * 1.2;
+            $(".gallery-img").css({
+                "width": width + "px",
+                "height": height + "px"
+            });
+        });
+    });
+</script>
+
+    {% endblock content %}

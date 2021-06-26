@@ -1,0 +1,4 @@
+.vscode/
+media/
+CloudVisionServiceAccountToken.json
+secret_key.txt
