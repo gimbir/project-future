@@ -31,4 +31,4 @@ Finally to run the Django Server, in the root project directory, run `python man
 
 ![Image Sample](https://image.prntscr.com/image/EUBMsYoLRmm6gBydU_d90g.png "Image Sample")
 
-![Result Sample](https://image.prntscr.com/image/dfANucXRSHufQ44zVgm6Ww.png "Result Sample")
+![Result Sample](https://image.prntscr.com/image/vN-1pEy7Ti2aGX1TX5fAaA.png "Result Sample")
