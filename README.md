@@ -1,6 +1,6 @@
 ## What is Project Future?
 
-It is basically a object detection web app that allows to translate detected object to other languages. Using Django Framework, Google Cloud Vision API and Google Translate API. (Currently on development, did not implemented translate part yet.)
+It is basically a object detection web app that allows to translate detected object to other languages using Django Framework, Google Cloud Vision API and Google Translate API.
 
 This is for our(Me([@Gimbir](https://github.com/gimbir)) and [@Venuin](https://github.com/Venuin)) final year project. We decided to call it as "Project Future" because we think this project will contribute to our future professional life in the way of learning new tech and applying them.
 
