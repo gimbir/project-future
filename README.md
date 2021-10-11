@@ -24,7 +24,7 @@ or you can use the file named ***'project_future.sql'*** to import the database 
 
 In case you have any issue about migration you can check **[this](https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html "https://simpleisbetterthancomplex.com/tutorial/2016/07/26/how-to-reset-migrations.html")** page to solve the problem.
 
-###For security reasons we cannot share the API Token. You need Google Cloud Service Account Token to be able to use the application without error. You can check [this](https://www.youtube.com/watch?v=wfyDiLMGqDM "https://www.youtube.com/watch?v=wfyDiLMGqDM") video to learn how to do it or simply Google it.
+***For security reasons we cannot share the API Token. You need Google Cloud Service Account Token to be able to use the application without error. You can check [this](https://www.youtube.com/watch?v=wfyDiLMGqDM "https://www.youtube.com/watch?v=wfyDiLMGqDM") video to learn how to do it or simply Google it.***
 
 Finally to run the Django Server, in the root project directory, run `python manage.py runserver` command.
 
