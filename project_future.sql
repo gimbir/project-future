@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2021 at 06:38 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Oct 11, 2021 at 03:40 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -139,6 +139,12 @@ CREATE TABLE `auth_user` (
 -- Dumping data for table `auth_user`
 --
 
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$260000$4ANqMNlfxKNVyztLdzYp3Z$wdE8eHsm5BQTjGsjWXLGlv9LHIEQJWZmsuvNGwAxZak=', '2021-06-22 17:53:23.284250', 0, 'Gimbir', '', '', 'aerengocmen@gmail.com', 0, 1, '2021-06-14 13:44:11.109382'),
+(2, 'pbkdf2_sha256$260000$hXJr7F5TWji7tsn68Ae6ym$DyxQKlse+OSnr8B6EXxo3TfnXBVXDESEfUwxydN62nw=', '2021-06-14 13:48:47.558581', 0, 'Minorin', '', '', 'minelustgel@gmail.com', 0, 1, '2021-06-11 15:19:11.433670'),
+(3, 'pbkdf2_sha256$260000$heyuJrygss1hQRYHwD3HI9$YxEnXATR7Dm5sQ+uWO3nDvpqwFyJolCiNkLN8lr5BcQ=', '2021-06-14 13:44:06.574542', 0, 'Venuin', '', '', 'venuin@hotmail.com', 0, 1, '2021-06-14 13:44:06.373820'),
+(5, 'pbkdf2_sha256$260000$9HK2vhyTV9PiO8KIB5pzCf$yKQ5fz3+PdGs0qASUjfihoAShXpBueHJlMNsSjfzS2E=', '2021-06-17 01:17:16.900969', 0, 'alp', '', '', 'alp@alp.com', 0, 1, '2021-06-17 01:17:16.684920'),
+(13, 'pbkdf2_sha256$260000$V9DV2WiZyi8gotiuZLoBpm$bGP1VesOkjxOm32yq6cnlWl27M2VsY+cSrnBjfhX3GU=', '2021-09-07 14:03:54.649524', 0, 'anan', '', '', 'anan@anan.com', 0, 1, '2021-09-07 14:03:54.434475');
 
 -- --------------------------------------------------------
 
@@ -268,6 +274,11 @@ CREATE TABLE `django_session` (
 -- Dumping data for table `django_session`
 --
 
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('63ai9oj9yiey9iiiv3rvxyr90a5a0t07', '.eJxVjDsOwjAQBe_iGln-fyjpOYO1u7ZxADlSnFSIu0OkFNC-mXkvlmBbW9pGWdKU2ZlJxU6_IwI9St9JvkO_zZzmvi4T8l3hBx38OufyvBzu30GD0b61isJb7UI1ococHIJHJbRADxANFRKRvAGJ2lQCFwLFjKWobKFqayp7fwD_RTiY:1lwmks:o7AkBqFdDmg6ty2Ky_aYlv-4xZi7H_KJHIMnMYcsjeI', '2021-07-09 14:24:26.784161'),
+('mn7rdzvt45opaq57sf9dz4a5b012ogl9', '.eJxVjEEOwiAQRe_C2hA6FEtduu8ZyDDMSNVAUtqV8e7apAvd_vfef6mA25rD1ngJc1IXBer0u0WkB5cdpDuWW9VUy7rMUe-KPmjTU038vB7u30HGlr91TyOIMWyj6awl79zowCDKmESsI0G2EAEoio3oPTrpeh5oAD4LdF69P-sXOFU:1lsmxL:FdIttg9rpvVBe9QYd3ihcsKJvY-n-fGLusROhlGJ5tw', '2021-06-28 13:48:47.559581'),
+('q046wvkbsh8vai4k42h7dnjeqc60f05b', '.eJxVjEEOwiAQRe_C2hAYSiku3XsGMjCDVA0kpV0Z765NutDtf-_9lwi4rSVsnZcwkzgLK06_W8T04LoDumO9NZlaXZc5yl2RB-3y2oifl8P9OyjYy7eGbCK7nEzMAIYRwJMhIgAXtaPB-szALmaj1Tgm1GpSXg1eIVqcbBbvD_-5OCU:1ltgei:JUf9YRMeQd2V8c0dK4__Fx2JoBDLYracMPEK6f1H6J4', '2021-07-01 01:17:16.902969'),
+('yqs7jfxaho5vxgdhctn7hd3x1pepbkps', '.eJxVjM0OwiAQhN-FsyG74afFo3efgQC7SNVAUtqT8d2VpAc9znzfzEv4sG_F751Xv5A4Cy1Ov10M6cF1ALqHemsytbqtS5RDkQft8tqIn5fD_TsooZfvOjqrbc46MRLmKXBmDclFR7Od0YzkEAGNookD6JwAyYAik6IDpcT7A_tgN_0:1lvkaR:HIQF1M0PPOiFYds5ebUBw936WbmnZ7-3NXG_z1RygFs', '2021-07-06 17:53:23.285890');
 
 -- --------------------------------------------------------
 
@@ -283,11 +294,6 @@ CREATE TABLE `main_image` (
   `login` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `main_image`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -301,11 +307,6 @@ CREATE TABLE `main_imagelabels` (
   `label_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `main_imagelabels`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -318,11 +319,6 @@ CREATE TABLE `main_imageobjects` (
   `img_id` bigint(20) NOT NULL,
   `obj_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `main_imageobjects`
---
-
 
 -- --------------------------------------------------------
 
@@ -339,6 +335,215 @@ CREATE TABLE `main_labels` (
 -- Dumping data for table `main_labels`
 --
 
+INSERT INTO `main_labels` (`id`, `label_name`) VALUES
+(1, 'Lip'),
+(2, 'Eye'),
+(3, 'Flash photography'),
+(4, 'Street fashion'),
+(5, 'Happy'),
+(6, 'Cap'),
+(7, 'Eyewear'),
+(8, 'Black hair'),
+(9, 'Electric blue'),
+(10, 'Long hair'),
+(11, 'Bicycle'),
+(12, 'Tire'),
+(13, 'Wheel'),
+(14, 'Building'),
+(15, 'Land vehicle'),
+(16, 'Bicycles--Equipment and supplies'),
+(17, 'Bicycle wheel'),
+(18, 'Daytime'),
+(19, 'Skyscraper'),
+(20, 'Vehicle'),
+(21, 'Product'),
+(22, 'Personal computer'),
+(23, 'Laptop'),
+(24, 'Font'),
+(25, 'Computer'),
+(26, 'Publication'),
+(27, 'Book'),
+(28, 'Space bar'),
+(29, 'Office supplies'),
+(30, 'Input device'),
+(31, 'Water'),
+(32, 'Beak'),
+(33, 'Organism'),
+(34, 'Plant'),
+(35, 'Wood'),
+(36, 'Fawn'),
+(37, 'Natural landscape'),
+(38, 'Lake'),
+(39, 'Terrestrial animal'),
+(40, 'Clothing'),
+(41, 'Hairstyle'),
+(42, 'White'),
+(43, 'Sky'),
+(44, 'Infrastructure'),
+(45, 'Fashion'),
+(46, 'Road surface'),
+(47, 'Arm'),
+(48, 'Cartoon'),
+(49, 'Gesture'),
+(50, 'Art'),
+(51, 'Illustration'),
+(52, 'Fictional character'),
+(53, 'Animated cartoon'),
+(54, 'Event'),
+(55, 'Drawing'),
+(56, 'Food'),
+(57, 'Ingredient'),
+(58, 'Cuisine'),
+(59, 'Dish'),
+(60, 'Fast food'),
+(61, 'Recipe'),
+(62, 'Fried food'),
+(63, 'Produce'),
+(64, 'Junk food'),
+(65, 'Natural foods'),
+(66, 'Fruit'),
+(67, 'Food group'),
+(68, 'Staple food'),
+(69, 'Rectangle'),
+(70, 'Strawberry'),
+(71, 'Facial expression'),
+(72, 'Mouth'),
+(73, 'Pink'),
+(74, 'Sleeve'),
+(75, 'Cg artwork'),
+(76, 'Space'),
+(77, 'Darkness'),
+(78, 'Graphics'),
+(79, 'Pattern'),
+(80, 'People in nature'),
+(81, 'Leg'),
+(82, 'Branch'),
+(83, 'Thigh'),
+(84, 'Leisure'),
+(85, 'Forest'),
+(86, 'Fashion accessory'),
+(87, 'Soil'),
+(88, 'Fur'),
+(89, 'Face'),
+(90, 'Skin'),
+(91, 'Eyebrow'),
+(92, 'Shoulder'),
+(93, 'Eyelash'),
+(94, 'Zombie'),
+(95, 'Human body'),
+(96, 'Neck'),
+(97, 'Jaw'),
+(98, 'Nose'),
+(99, 'Smile'),
+(100, 'Head'),
+(101, 'Vertebrate'),
+(102, 'Organ'),
+(103, 'Vision care'),
+(104, 'Dog'),
+(105, 'Flower'),
+(106, 'Carnivore'),
+(107, 'Grass'),
+(108, 'Companion dog'),
+(109, 'Fang'),
+(110, 'Yawn'),
+(111, 'Parallel'),
+(112, 'Logo'),
+(113, 'Symmetry'),
+(114, 'Circle'),
+(115, 'Symbol'),
+(116, 'Window'),
+(117, 'Azure'),
+(118, 'Tower block'),
+(119, 'Urban design'),
+(120, 'Condominium'),
+(121, 'Tower'),
+(122, 'Residential area'),
+(123, 'Water resources'),
+(124, 'Fluvial landforms of streams'),
+(125, 'Spring'),
+(126, 'Waterfall'),
+(127, 'Vegetation'),
+(128, 'Watercourse'),
+(129, 'Grey'),
+(130, 'Line'),
+(131, 'Asphalt'),
+(132, 'Tints and shades'),
+(133, 'Road'),
+(134, 'Composite material'),
+(135, 'Facade'),
+(136, 'Mobile phone'),
+(137, 'Communication Device'),
+(138, 'Telephony'),
+(139, 'Iphone'),
+(140, 'Portable communications device'),
+(141, 'Finger'),
+(142, 'Thumb'),
+(143, 'Gadget'),
+(144, 'Mobile device'),
+(145, 'Flooring'),
+(146, 'City'),
+(147, 'Monochrome'),
+(148, 'Human leg'),
+(149, 'Output device'),
+(150, 'Audio equipment'),
+(151, 'Desk'),
+(152, 'Engineering'),
+(153, 'Drinkware'),
+(154, 'Liquid'),
+(155, 'Stemware'),
+(156, 'Red russian'),
+(157, 'Tableware'),
+(158, 'Apéritif'),
+(159, 'Barware'),
+(160, 'Automotive lighting'),
+(161, 'Fluid'),
+(162, 'Cocktail'),
+(163, 'Photograph'),
+(164, 'Green'),
+(165, 'Light'),
+(166, 'Nature'),
+(167, 'Botany'),
+(168, 'Tree'),
+(169, 'Wedding dress'),
+(170, 'Dress'),
+(171, 'One-piece garment'),
+(172, 'Gown'),
+(173, 'Bride'),
+(174, 'Cloud'),
+(175, 'Mountain'),
+(176, 'Larch'),
+(177, 'Slope'),
+(178, 'Highland'),
+(179, 'Black-and-white'),
+(180, 'Fixture'),
+(181, 'Commercial building'),
+(182, 'Operating system'),
+(183, 'Screenshot'),
+(184, 'Software'),
+(185, 'Technology'),
+(186, 'Multimedia'),
+(187, 'Hair'),
+(188, 'Paint'),
+(189, 'Iris'),
+(190, 'Painting'),
+(191, 'Mammal'),
+(192, 'Chin'),
+(193, 'Purple'),
+(194, 'Linens'),
+(195, 'Trousers'),
+(196, 'Travel'),
+(197, 'Sidewalk'),
+(198, 'Outerwear'),
+(199, 'Human'),
+(200, 'Beard'),
+(201, 'Tie'),
+(202, 'Fashion design'),
+(203, 'Facial hair'),
+(204, 'Blazer'),
+(205, 'Forehead'),
+(206, 'Lipstick'),
+(207, 'Makeover'),
+(208, 'Wig');
 
 -- --------------------------------------------------------
 
@@ -484,6 +689,40 @@ CREATE TABLE `main_objects` (
 -- Dumping data for table `main_objects`
 --
 
+INSERT INTO `main_objects` (`id`, `obj_name`) VALUES
+(1, 'Person'),
+(2, 'Bicycle'),
+(3, 'Tire'),
+(4, 'Car'),
+(5, 'Bicycle wheel'),
+(6, 'Packaged goods'),
+(7, 'Mobile phone'),
+(8, 'Squirrel'),
+(9, 'Animal'),
+(10, 'Pants'),
+(11, 'Top'),
+(12, 'Dress'),
+(13, 'Footwear'),
+(14, 'Food'),
+(15, 'Grape'),
+(16, 'Fruit'),
+(17, 'Clothing'),
+(18, 'Drink'),
+(19, 'Dog'),
+(20, 'Building'),
+(21, 'Outerwear'),
+(22, 'Tablet computer'),
+(23, 'Computer monitor'),
+(24, 'Laptop'),
+(25, 'Lighting'),
+(26, 'Deer'),
+(27, 'House'),
+(28, 'Window'),
+(29, 'Hat'),
+(30, 'Sunglasses'),
+(31, 'Jeans'),
+(32, 'Belt');
+
 -- --------------------------------------------------------
 
 --
@@ -496,10 +735,6 @@ CREATE TABLE `main_rating` (
   `img_id` bigint(20) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `main_rating`
---
 
 --
 -- Indexes for dumped tables
@@ -655,7 +890,7 @@ ALTER TABLE `auth_permission`
 -- AUTO_INCREMENT for table `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `auth_user_groups`
@@ -691,25 +926,25 @@ ALTER TABLE `django_migrations`
 -- AUTO_INCREMENT for table `main_image`
 --
 ALTER TABLE `main_image`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `main_imagelabels`
 --
 ALTER TABLE `main_imagelabels`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `main_imageobjects`
 --
 ALTER TABLE `main_imageobjects`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `main_labels`
 --
 ALTER TABLE `main_labels`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=209;
 
 --
 -- AUTO_INCREMENT for table `main_languages`
@@ -721,13 +956,13 @@ ALTER TABLE `main_languages`
 -- AUTO_INCREMENT for table `main_objects`
 --
 ALTER TABLE `main_objects`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `main_rating`
 --
 ALTER TABLE `main_rating`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
