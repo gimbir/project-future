@@ -1,3 +1,5 @@
+(7 months later)Edit: This is just sphagetti code man wtf?! But it works fine though lol.
+
 ## What is Project Future?
 
 It is basically a object detection web app that allows to translate detected object to other languages. Using Django Framework, Google Cloud Vision API and Google Translate API. (Currently on development, did not implemented translate part yet.)
