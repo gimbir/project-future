@@ -1,4 +1,4 @@
-(7 months later)Edit: This is just spaghetti code man wtf?! But it works fine though lol. (http://3.70.87.104/)(i have a domain name but i don't want to pay AWS for this right now)
+(7 months later)Edit: This is just spaghetti code man wtf?! But it works fine though lol. (http://3.70.87.104) (i have a domain name but i don't want to pay AWS for this right now)
 
 ## What is Project Future?
 
