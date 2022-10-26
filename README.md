@@ -1,4 +1,4 @@
-(7 months later)Edit: This is just spaghetti code man wtf?! But it works fine though lol. (http://translatinator.site/)
+(7 months later)Edit: This is just spaghetti code man wtf?! But it works fine though lol.
 
 ## What is Project Future?
 
